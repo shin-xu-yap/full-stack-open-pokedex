@@ -2,10 +2,11 @@ export default {
   'env': {
     'browser': true,
     'es6': true,
-    'jest/globals': true
+    'jest/globals': true,
+    'node': true  // Added this line
   },
-  'settings':{
-    'react':{
+  'settings': {
+    'react': {
       'version': 'detect'
     }
   },
@@ -26,15 +27,15 @@ export default {
   'rules': {
     'indent': [
       'error',
-        2
-      ],
+      2
+    ],
     'linebreak-style': [
       'error',
       'unix'
     ],
     'quotes': [
       'error',
-      'single'
+      'single'  // Ensure all quotes are single
     ],
     'semi': [
       'error',
