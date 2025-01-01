@@ -5,7 +5,9 @@ module.exports = {
     "jest/globals": true
   },
   "settings":{
-    "react": "detect"
+    "react": {
+      "version": "detect"
+    }
   },
   "extends": [
     "eslint:recommended",
