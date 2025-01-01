@@ -1,15 +1,11 @@
-# Full Stack open CI/CD
+Java has been selected as the language for this exercise. 
 
-This repository is used for the CI/CD module of the Full stack open course
+Tools like Checkstyle, CodeScene, and FindBugs are frequently used for linting. While CodeScene and FindBugs assist in locating hidden problems in source code to avoid technical debts, Checkstyle makes sure that developers follow uniform coding standards. 
 
-Fork the repository to complete course exercises
+Java programs are frequently tested with JUnit and Selenium. Selenium is frequently used for web testing, but JUnit is frequently used for unit testing. The testing procedure helps find bugs at early stage and determines whether the Java software is functioning as planned.
 
-## Commands
+Gradle and Apache Maven are typically used for Java software development. While Apache Maven streamlines builds and handles dependencies for developers, Gradle offers a flexible and effective build system for Java.
 
-Start by running `npm install` inside the project folder
+In addition to Jenkins and GitHub Actions, Bitbucket Pipelines, AWS CodePipeline, CircleCI, Azure Pipelines, and GitLab are options for setting up continuous integration.
 
-`npm start` to run the webpack dev server
-`npm test` to run tests
-`npm run eslint` to run eslint
-`npm run build` to make a production build
-`npm run start-prod` to run your production build
+A cloud-based solution is frequently preferable for convenience when choosing between a self-hosted and cloud-based continuous integration system. The self-hosted CI environment, on the other hand, gives developers complete control over the environment, makes it more secure, and allows them to do anything they want.This choice is affected by a number of factors, such as financial constraints, hardware control, and particular security needs.
