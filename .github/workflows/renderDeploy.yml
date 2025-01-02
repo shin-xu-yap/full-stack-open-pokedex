@@ -8,7 +8,9 @@ jobs:
     name: Deploy to Render
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger deployment
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Deploy to Render
         uses: sws2apps/render-deployment@main
         with:
           serviceId: ${{ctr4rgtds78s73di8gug?key=PHDwIHvFC80}}
