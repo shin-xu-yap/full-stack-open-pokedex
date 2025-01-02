@@ -17,6 +17,8 @@ jobs:
         run: npm install
       - name: Lint        
         run: npm run eslint
+      - name: Ensure build_step.sh is executable
+        run: chmod +x ./build_step.sh
       - name: Build
         run: npm run build
       - name: Test
