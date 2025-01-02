@@ -1,1 +1,0 @@
-export const setupFilesAfterEnv = ['<rootDir>/setupTests.js']
