@@ -42,6 +42,8 @@ jobs:
         - name: Bump version and push tag
           if: ${{ success() }} 
           uses: anothrNick/github-tag-action@1.64.0
+          with:
+            release-type: patch 
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             DRY_RUN: true
