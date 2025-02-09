@@ -32,6 +32,8 @@ jobs:
         with:
           service-id: ${{ secrets.MY_RENDER_SERVICE_ID }}
           api-key: ${{ secrets.MY_RENDER_API_KEY }}
+      - name: Debug webhook URL
+        run: echo "DISCORD_WEBHOOK_URL=${{ secrets.DISCORD_WEBHOOK }}"
       - name: Test Info
         uses: rjstone/discord-webhook-notify@v1
         with:
