@@ -33,6 +33,12 @@ jobs:
           service-id: ${{ secrets.MY_RENDER_SERVICE_ID }}
           api-key: ${{ secrets.MY_RENDER_API_KEY }}
           wait-for-success: true
+      - name: Send success notification to Discord
+        if: ${{ success() }}
+        uses: david-karlsen/discord-webhook-notify@v2
+        with:
+          webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          message: 'Deployment to production succeeded! 🚀'
   tag_release:
       needs: [build]
       runs-on: ubuntu-latest
