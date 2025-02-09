@@ -33,12 +33,20 @@ jobs:
           service-id: ${{ secrets.MY_RENDER_SERVICE_ID }}
           api-key: ${{ secrets.MY_RENDER_API_KEY }}
           wait-for-success: true
-      - name: Send success notification to Discord
-        if: ${{ success() }}
-        uses: david-karlsen/discord-webhook-notify@v2
+      - name: Test Success
+        uses: rjstone/discord-webhook-notify@v1
+        if: success()
         with:
-          webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
-          message: 'Deployment to production succeeded! 🚀'
+          severity: info
+          details: 'Deployment to production succeeded! 🚀'
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+      - name: Test Failure
+        uses: rjstone/discord-webhook-notify@v1
+        if: failure()
+        with:
+          severity: error
+          details: 'Deployment to production failed! ⚠️'
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
   tag_release:
       needs: [build]
       runs-on: ubuntu-latest
