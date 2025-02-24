@@ -38,7 +38,7 @@ jobs:
           -d '{"content": "Test message"}' \
           ${{ secrets.DISCORD_WEBHOOK }} || exit 1
       - name: Test Success
-        uses: rjstone/discord-webhook-notify@v1
+        uses: rjstone/discord-webhook-notify@v2
         if: success()
         with:
           severity: info
