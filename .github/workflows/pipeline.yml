@@ -34,24 +34,13 @@ jobs:
           api-key: ${{ secrets.MY_RENDER_API_KEY }}
       - name: Debug webhook URL
         run: echo "DISCORD_WEBHOOK_URL=${{ secrets.DISCORD_WEBHOOK }}"
-      - name: Test Info
+      - name: Test Success
         uses: rjstone/discord-webhook-notify@v1
+        if: success()
         with:
-            severity: info
-            details: Test succeeded.
-            webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
-      - name: Test Warn
-        uses: rjstone/discord-webhook-notify@v1
-        with:
-            severity: warn
-            details: Test warning.
-            webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
-      - name: Test Error
-        uses: rjstone/discord-webhook-notify@v1
-        with:
-            severity: error
-            details: Test error.
-            webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+          severity: info
+          details: Test Succeeded!
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
   tag_release:
       needs: [build]
       runs-on: ubuntu-latest
